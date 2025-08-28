@@ -55,16 +55,16 @@
 - **UI & UX**
   - `animated_bottom_navigation_bar` & `google_nav_bar`: Modern bottom navigation bars.
   - `material_symbols_icons`: Access to Google’s Material Symbols icons.
-  - `shimmer_animation`: Skeleton loading animations for better UX.
+  
 
 - **Data Handling & Export**
   - `intl`: Date formatting for tasks and reports.
   - `pdf` & `printing`: Generate and share PDF reports.
   - `csv` & `excel`: Export tasks as CSV or Excel files.
-  - `path_provider`: Access local storage for saving reports.
+  - `path_provider`: Access local storage.
 
 - **Extras**
-  - `image_picker`: Picking images for task attachments or notes.
+  - `image_picker`: Picking images.
 
 ---
 
