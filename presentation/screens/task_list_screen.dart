@@ -35,8 +35,11 @@ class TaskListScreen extends StatelessWidget {
                   final e = items[index];
                   return ItemCard(
                     item: e,
-                    onTap: () =>
-                        Navigator.pushNamed(context, '/detail', arguments: e),
+                    onTap: () => Navigator.pushNamed(
+                      context,
+                      '/detail',
+                      arguments: e.id,
+                    ),
                     onDelete: () =>
                         context.read<ItemBloc>().add(ItemDeleted(e.id)),
                   );

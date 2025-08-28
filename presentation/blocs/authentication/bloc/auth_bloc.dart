@@ -29,7 +29,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     try {
-      emit(const AuthLoading(googleLoading: true)); //  shows loading
+      //  shows loading
+      emit(const AuthLoading(googleLoading: true));
       final user = await _repo.signInWithGoogle();
 
       if (user == null) {
@@ -47,7 +48,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     try {
-      emit(const AuthLoading(emailLoading: true)); // only email button loading
+      // only email button loading
+      emit(const AuthLoading(emailLoading: true));
       final user = await _repo.signInWithEmail(event.email, event.password);
 
       if (user == null) {

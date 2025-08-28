@@ -39,7 +39,7 @@ class ItemBloc extends Bloc<ItemEvent, ItemState> {
         add(ItemsUpdated(items));
       },
       onError: (e) {
-        addError(e); // optional
+        addError(e);
       },
     );
   }
@@ -61,9 +61,7 @@ class ItemBloc extends Bloc<ItemEvent, ItemState> {
       final items = await fetchOnce();
       final summary = ItemSummary.from(items);
       emit(ItemLoaded(items: items, summary: summary));
-    } catch (_) {
-      // Keep current state; Firestore offline cache will still feed the stream
-    }
+    } catch (_) {}
   }
 
   Future<void> _onAdded(ItemAdded event, Emitter<ItemState> emit) async {
@@ -77,18 +75,19 @@ class ItemBloc extends Bloc<ItemEvent, ItemState> {
     await addItem(entity);
   }
 
-  // Future<void> _onUpdated(ItemUpdated event, Emitter<ItemState> emit) async {
-  //   await updateItem(event.item);
-  // }
   Future<void> _onUpdated(ItemUpdated event, Emitter<ItemState> emit) async {
     await updateItem(event.item);
 
-    //  updates UI
     if (state is ItemLoaded) {
       final current = state as ItemLoaded;
+      print("Updating item with id: ${event.item.id}");
+      print("Current items: ${current.items.map((e) => e.id).toList()}");
 
       final updatedItems = current.items.map((item) {
-        return item.id == event.item.id ? event.item : item;
+        if (item.id == event.item.id) {
+          return event.item;
+        }
+        return item;
       }).toList();
 
       emit(

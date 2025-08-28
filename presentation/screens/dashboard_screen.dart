@@ -58,12 +58,14 @@ class DashboardScreen extends StatelessWidget {
                         title: 'Completed',
                         value: s.completed.toString(),
                         icon: Icons.check_circle,
+                        // ignore: deprecated_member_use
                         chipColor: AppColors.success.withOpacity(.2),
                       ),
                       SummaryCard(
                         title: 'Pending',
                         value: s.pending.toString(),
                         icon: Icons.pending_actions,
+                        // ignore: deprecated_member_use
                         chipColor: AppColors.danger.withOpacity(.2),
                       ),
                       SummaryCard(
@@ -83,8 +85,11 @@ class DashboardScreen extends StatelessWidget {
                   ...recentTasks.map(
                     (e) => ItemCard(
                       item: e,
-                      onTap: () =>
-                          Navigator.pushNamed(context, '/detail', arguments: e),
+                      onTap: () => Navigator.pushNamed(
+                        context,
+                        '/detail',
+                        arguments: e.id,
+                      ),
                       onDelete: () =>
                           context.read<ItemBloc>().add(ItemDeleted(e.id)),
                     ),
