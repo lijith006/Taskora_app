@@ -67,4 +67,9 @@
   - `image_picker`: Picking images.
 
 ---
+## Getting Started
 
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/lijith006/taskora.git
+   cd taskora
