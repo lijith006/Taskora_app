@@ -1,20 +1,25 @@
-Taskora is a Flutter-based productivity and task management app that helps users manage, track, and report their tasks efficiently. The app includes real-time task updates, task filtering, and export functionality in PDF, CSV, and Excel formats.
+Taskora
+
+Taskora is a Flutter-based productivity and task management app designed to help users manage, track, and report tasks efficiently. It features real-time task updates, advanced filtering, and multi-format export functionality (PDF, CSV, Excel).
+
 Features
 Authentication
 
 Simple login using Firebase Authentication.
 
-Keeps the user logged in until logout.
+Maintains user session until logout.
 
-Login screen with email/password (and Google Sign-in ).
+Login screen supports email/password and Google Sign-in.
 
 Data Management
 
 Uses Firestore as the backend database.
 
-CRUD operations: Add, Update, Delete tasks.
+Supports CRUD operations for tasks:
 
-Each task has:
+Add, Update, Delete tasks.
+
+Each task contains:
 
 id (unique)
 
@@ -22,56 +27,74 @@ title
 
 description
 
-status (Completed/Pending)
+status (Completed / Pending)
 
 createdDate
 
-Supports offline caching for viewing tasks without internet.
+Offline caching allows viewing tasks without internet.
 
 UI & Screens
 
-Dashboard/Home Screen: Shows task summary (total tasks, completed vs pending).
+Dashboard/Home Screen: Displays a summary of tasks (total tasks, completed vs pending).
 
 Task List Screen: Scrollable list of tasks with cards and checkboxes.
 
-Task Details Screen: View full task details on tapping a card.
+Task Details Screen: View full details of a task by tapping on a card.
 
-Add Task Screen: Form with validation for creating tasks.
+Add Task Screen: Form with validation for creating new tasks.
 
-Reports Screen: Filter tasks by date/status, select multiple tasks, and export as PDF, CSV, or Excel.
+Reports Screen:
 
-Export tasks in multiple formats:
+Filter tasks by date and status.
 
-PDF using printing and pdf packages.
+Select multiple tasks for bulk operations.
 
-CSV using csv package.
-
-Excel using excel package.
+Export tasks as PDF, CSV, or Excel.
 
 Share or save generated reports.
 
+Export Formats
+
+PDF: Generated using pdf & printing packages.
+
+CSV: Generated using csv package.
+
+Excel: Generated using excel package.
+
 Libraries & Tools
 
-flutter_bloc: State management for handling app state with BLoC pattern.
+State Management & Architecture
 
-bloc & equatable: Core libraries for BLoC architecture and value comparisons.
+flutter_bloc: BLoC pattern for managing app state.
 
-firebase_core, firebase_auth, cloud_firestore: Firebase backend for authentication and real-time Firestore data.
+bloc & equatable: Core BLoC architecture & value comparisons.
 
-google_sign_in: Optional Google login integration.
+get_it: Dependency injection for clean architecture.
 
-intl: Formatting dates for tasks and reports.
+Firebase & Authentication
+
+firebase_core, firebase_auth, cloud_firestore: Firebase backend & real-time data.
+
+google_sign_in: Google login integration.
+
+UI & UX
+
+animated_bottom_navigation_bar & google_nav_bar: Modern bottom navigation bars.
+
+material_symbols_icons: Access to Google’s Material Symbols icons.
+
+shimmer_animation: Skeleton loading animations for better UX.
+
+Data Handling & Export
+
+intl: Date formatting for tasks and reports.
 
 pdf & printing: Generate and share PDF reports.
 
 csv & excel: Export tasks as CSV or Excel files.
 
-path_provider: Access local storage directories for saving reports.
+path_provider: Access local storage for saving reports.
 
-get_it: Dependency injection for clean architecture and service management.
+Extras
 
-animated_bottom_navigation_bar & google_nav_bar: Modern bottom navigation bars for better UX.
-
-material_symbols_icons: Access to Google's Material Symbols icons.
-
-image_picker: Picking images for tasks (attachments or notes).
+image_picker: Picking images for task attachments or notes.
