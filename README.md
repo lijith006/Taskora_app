@@ -75,6 +75,8 @@
    cd taskora
 
 ## App Screenshots
+<img src="screenshot/1.png" alt="1" width="400"/>
+<img src="screenshot/2.png" alt="2" width="400"/>
 
 ![Screenshot 1](screenshot/1.png)
 ![Screenshot 2](screenshot/2.png)
