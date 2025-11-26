@@ -63,8 +63,7 @@
   - `csv` & `excel`: Export tasks as CSV or Excel files.
   - `path_provider`: Access local storage.
 
-- **Extras**
-  - `image_picker`: Picking images.
+
 
 ---
 ## Getting Started
